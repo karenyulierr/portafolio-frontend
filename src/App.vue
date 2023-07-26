@@ -1,10 +1,18 @@
 <script setup>
 import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
+import Prueba from "./components/Prueba.vue";
 </script>
 
 <template>
-  <div>
+  <div class="page-wrapper">
     <Header />
+    <main>
+      <Prueba />
+      <Prueba />
+      <Prueba />
+    </main>
+    <Footer />
   </div>
 </template>
 
@@ -34,5 +42,13 @@ body {
   font-family: "Lato", sans-serif;
   background-color: var(--gris-claro);
 }
+.page-wrapper {
+  min-height: 100vh; /* Asegura que la altura mínima sea el 100% del viewport height */
+  display: flex;
+  flex-direction: column;
+}
 
+main {
+  flex-grow: 1; /* Hace que el contenido principal crezca para llenar el espacio disponible */
+}
 </style>

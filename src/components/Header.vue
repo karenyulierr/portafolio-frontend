@@ -1,12 +1,13 @@
 <script setup>
 import Logo from "../assets/img/logo_header.png";
-import { ref } from "vue";
+import { ref,useRouter } from "vue";
 
 const navBarVisible = ref(false);
 
 const toggleNavBar = () => {
   navBarVisible.value = !navBarVisible.value;
 };
+const router = useRouter();
 </script>
 
 <template>
@@ -22,7 +23,7 @@ const toggleNavBar = () => {
         <li><a href="#" class="active">Inicio</a></li>
         <li><a href="#">Inicio</a></li>
         <li><a href="#">Inicio</a></li>
-        <li><a href="#">Inicio</a></li>
+        <li><a href="#" @click="router.push({ name: 'Login' })">Login</a></li>
       </ul>
     </nav>
   </div>
